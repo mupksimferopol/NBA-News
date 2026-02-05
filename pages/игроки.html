@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>NBA News — Игроки</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Шапка сайта (единая для всех вкладок) -->
+        <header class="header">
+            <div class="logo">
+                <a href="../index.html">NBA News</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="главная.html">Главная</a></li>
+                    <li><a href="новости.html">Новости</a></li>
+                    <li><a href="команды.html">Команды</a></li>
+                    <li><a href="игроки.html" class="active">Игроки</a></li>
+                    <li><a href="расписание.html">Расписание</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!-- Основной контент: вкладка «Игроки» -->
+        <main class="main-content">
+            <section class="players-tab">
+                <div class="container">
+                    <h2 class="section-title">Игроки НБА</h2>
+
+                    <div class="players-filter">
+                        <label for="position-select">Позиция:</label>
+                        <select id="position-select" class="filter-select">
+                            <option value="all">Все</option>
+                            <option value="pg">Разыгрывающий (PG)</option>
+                            <option value="sg">Атакующий защитник (SG)</option>
+                            <option value="sf">Лёгкий форвард (SF)</option>
+                            <option value="pf">Тяжёлый форвард (PF)</option>
+                            <option value="c">Центровой (C)</option>
+                        </select>
+
+                        <label for="team-select">Команда:</label>
+                        <select id="team-select" class="filter-select">
+                            <option value="all">Все</option>
+                            <option value="lakers">Лос‑Анджелес Лейкерс</option>
+                            <option value="celtics">Бостон Селтикс</option>
+                            <option value="warriors">Голден Стэйт Уорриорз</option>
+                            <!-- Добавьте остальные команды -->
+                        </select>
+                    </div>
+
+                    <div class="players-grid">
+                        <!-- Игрок 1 -->
+                        <article class="player-card" data-position="sf" data-team="lakers">
+                            <div class="player-card-image-wrapper">
+                                        <img src="../img/леброн джеймс.avif" alt="Леброн Джеймс" class="player-card-image">
+                            </div>
+                            <div class="player-card-content">
+                                <h3 class="player-name">Леброн Джеймс</h3>
+                                <p class="player-info">
+                                    <strong>Позиция:</strong> Лёгкий форвард<br>
+                                    <strong>Команда:</strong> Лос‑Анджелес Лейкерс<br>
+                                    <strong>Возраст:</strong> 38 лет<br>
+                                    <strong>Рост:</strong> 206 см
+                                </p>
+                                <a href="#" class="player-link">Профиль игрока</a>
+                            </div>
+                        </article>
+
+                        <!-- Игрок 2 -->
+                        <article class="player-card" data-position="pf" data-team="celtics">
+                            <div class="player-card-image-wrapper">
+                                <img src="../img/Джейсон Тейтум.jpg" alt="Джейсон Тейтум" class="player-card-image">
+                            </div>
+                            <div class="player-card-content">
+                                <h3 class="player-name">Джейсон Тейтум</h3>
+                                <p class="player-info">
+                                    <strong>Позиция:</strong> Тяжёлый форвард<br>
+                                    <strong>Команда:</strong> Бостон Селтикс<br>
+                                    <strong>Возраст:</strong> 25 лет<br>
+                                    <strong>Рост:</strong> 203 см
+                                </p>
+                                <a href="#" class="player-link">Профиль игрока</a>
+                            </div>
+                        </article>
+
+                        <!-- Игрок 3 -->
+                        <article class="player-card" data-position="sg" data-team="warriors">
+                            <div class="player-card-image-wrapper">
+                                <img src="../img/Стеф Карри.jpg" alt="Стеф Карри" class="player-card-image">
+                            </div>
+                            <div class="player-card-content">
+                                <h3 class="player-name">Стеф Карри</h3>
+                                <p class="player-info">
+                                    <strong>Позиция:</strong> Атакующий защитник<br>
+                                    <strong>Команда:</strong> Голден Стэйт Уорриорз<br>
+                                    <strong>Возраст:</strong> 35 лет<br>
+                                    <strong>Рост:</strong> 191 см
+                                </p>
+                                <a href="#" class="player-link">Профиль игрока</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Подвал -->
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; 2026 NBA News. Все права защищены.</p>
+                <ul class="footer-links">
+                    <li><a href="#">О сайте</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

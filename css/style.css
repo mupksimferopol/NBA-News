@@ -1,0 +1,1071 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #000;
+}
+
+/* Контейнер страницы */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #FF6B00;
+    border-bottom: 3px solid #000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #FF6B00;
+    text-shadow: 0 0 5px rgba(255, 107, 0, 0.7);
+}
+
+/* Герой-блок */
+.hero-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(255, 107, 0, 0.6)
+    ), url('https://via.placeholder.com/1920x600/FF6B00/000000?text=NBA+Background');
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    text-align: center;
+    padding: 4rem 5%;
+    max-width: 800px;
+}
+
+.hero-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hero-container p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Лента новостей */
+.news-feed {
+    flex: 1;
+    padding: 2rem 5%;
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.news-item {
+    background-color: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ... (предыдущие стили остаются без изменений) */
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+}
+
+.news-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 62.5%; /* 16:9 aspect ratio (250/400 = 0.625) */
+    overflow: hidden;
+}
+
+.news-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.news-item:hover .news-image {
+    transform: scale(1.05);
+}
+
+.news-text {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.news-item h2 {
+    color: #FF6B00;
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.news-item p {
+    color: #ccc;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.news-item time {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Подвал */
+.footer {
+    background-color: #FF6B00;
+    color: #000;
+    padding: 2rem 5%;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.footer p {
+    font-weight: 500;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-shadow 0.3s;
+}
+
+.footer-links li a:hover {
+    text-shadow: 0 0 5px #fff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-container h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-container p {
+        font-size: 1rem;
+    }
+
+    .news-container {
+        padding: 0 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .news-text {
+        padding: 1.2rem;
+    }
+
+    .footer-container {
+        padding: 0 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Дополнительные улучшения доступности */
+:focus-visible {
+    outline: 2px solid #FF6B00;
+    outline-offset: 2px;
+}
+
+/* Стили для печати */
+@media print {
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .header, .footer, .nav {
+        display: none;
+    }
+
+    .page-container {
+        min-height: auto;
+    }
+
+    .news-item {
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+
+    .news-image {
+        display: none;
+    }
+}
+/* === СТИЛИ ДЛЯ ВКЛАДКИ «НОВОСТИ» === */
+
+.news-tab {
+    padding: 2rem 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Заголовок раздела */
+.section-title {
+    color: #FF6B00;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Grid-сетка для карточек */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* Карточка новости */
+.news-card {
+    background-color: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(255, 107, 0, 0.25);
+}
+
+/* Анимации через keyframes */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoom-in {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Применение анимаций по data-атрибуту */
+.news-card[data-animation="fade-in"] {
+    animation: fade-in 0.8s ease forwards;
+}
+
+.news-card[data-animation="slide-up"] {
+    animation: slide-up 0.8s ease forwards;
+}
+
+.news-card[data-animation="zoom-in"] {
+    animation: zoom-in 0.8s ease forwards;
+}
+
+/* Каскадная задержка появления карточек */
+.news-card:nth-child(1) { animation-delay: 0.1s; }
+.news-card:nth-child(2) { animation-delay: 0.3s; }
+.news-card:nth-child(3) { animation-delay: 0.5s; }
+
+/* Обёртка для изображения */
+.news-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 62.5%; /* Соотношение 16:10 (400x250) */
+    overflow: hidden;
+}
+
+.news-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.news-card:hover .news-card-image {
+    transform: scale(1.08);
+}
+
+/* Контент карточки */
+.news-card-content {
+    padding: 1.4rem;
+    color: #fff;
+}
+
+.news-category {
+    display: inline-block;
+    background-color: #FF6B00;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.8px;
+}
+
+.news-card h3 {
+    color: #FF6B00;
+    font-size: 1.3rem;
+    margin: 0 0 0.6rem 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.news-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin: 0 0 0.8rem 0;
+    line-height: 1.5;
+}
+
+.news-card time {
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .news-card-content {
+        padding: 1.2rem;
+    }
+
+    .news-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .news-category {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .news-card time {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .news-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .news-card p {
+        font-size: 0.9rem;
+    }
+
+    .news-category {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .news-card time {
+        font-size: 0.75rem;
+    }
+}
+.header a {
+    text-decoration: none;
+    color: inherit;
+}
+/* === СТИЛИ ДЛЯ ВКЛАДКИ «КОМАНДЫ» === */
+
+.teams-tab {
+    padding: 2rem 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Заголовок раздела */
+.section-title {
+    color: #FF6B00;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Grid-сетка для карточек команд */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* Карточка команды */
+.team-card {
+    background-color: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(255, 107, 0, 0.25);
+}
+
+/* Анимации */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoom-in {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Применение анимаций по data-атрибуту */
+.team-card[data-animation="fade-in"] {
+    animation: fade-in 0.8s ease forwards;
+}
+
+.team-card[data-animation="slide-up"] {
+    animation: slide-up 0.8s ease forwards;
+}
+
+.team-card[data-animation="zoom-in"] {
+    animation: zoom-in 0.8s ease forwards;
+}
+
+/* Каскадная задержка появления карточек */
+.team-card:nth-child(1) { animation-delay: 0.1s; }
+.team-card:nth-child(2) { animation-delay: 0.3s; }
+.team-card:nth-child(3) { animation-delay: 0.5s; }
+
+
+/* Обёртка для изображения */
+.team-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 66.67%; /* Соотношение 3:2 (400x267) */
+    overflow: hidden;
+}
+
+.team-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-card-image {
+    transform: scale(1.08);
+}
+
+/* Контент карточки */
+.team-card-content {
+    padding: 1.4rem;
+    color: #fff;
+}
+
+.team-name {
+    color: #FF6B00;
+    font-size: 1.3rem;
+    margin: 0 0 0.6rem 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.team-conference {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+}
+
+.team-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.team-stats strong {
+    color: #fff;
+    font-weight: 500;
+}
+
+.team-link {
+    display: inline-block;
+    color: #FF6B00;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #FF6B00;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.team-link:hover {
+    background-color: #FF6B00;
+    color: #000;
+    text-decoration: none;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .teams-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .team-card-content {
+        padding: 1.2rem;
+    }
+
+    .team-name {
+        font-size: 1.2rem;
+    }
+
+    .team-conference {
+        font-size: 0.85rem;
+    }
+
+    .team-stats {
+        font-size: 0.85rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+
+    .team-link {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .team-name {
+        font-size: 1.1rem;
+    }
+
+    .team-conference,
+    .team-stats {
+        font-size: 0.8rem;
+    }
+
+    .team-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+/* === СТИЛИ ДЛЯ ВКЛАДКИ «ИГРОКИ» === */
+
+
+.players-tab {
+    padding: 2rem 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Заголовок раздела */
+.section-title {
+    color: #FF6B00;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Фильтр игроков */
+.players-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.players-filter label {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.filter-select {
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #FF6B00;
+    background-color: #222;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.filter-select:hover {
+    background-color: #333;
+}
+
+/* Grid-сетка для карточек игроков */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Карточка игрока */
+.player-card {
+    background-color: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    padding-left: 10px;
+}
+
+.player-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(255, 107, 0, 0.2);
+}
+
+/* Анимации появления карточек */
+@keyframes player-fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.player-card {
+    animation: player-fade-in 0.7s ease forwards;
+}
+
+.player-card:nth-child(1) { animation-delay: 0.1s; }
+.player-card:nth-child(2) { animation-delay: 0.3s; }
+.player-card:nth-child(3) { animation-delay: 0.5s; }
+
+/* Обёртка для изображения */
+.player-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 133.33%; /* Соотношение 3:4 (300x400) */
+    overflow: hidden;
+}
+
+.player-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.player-card:hover .player-card-image {
+    transform: scale(1.08);
+}
+
+/* Контент карточки */
+.player-card-content {
+    padding: 1.4rem;
+    color: #fff;
+}
+
+.player-name {
+    color: #FF6B00;
+    font-size: 1.3rem;
+    margin: 0 0 0.8rem 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.player-info {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0 0 1rem 0;
+}
+
+.player-info strong {
+    color: #fff;
+    font-weight: 500;
+}
+
+.player-link {
+    display: inline-block;
+    color: #FF6B00;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #FF6B00;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.player-link:hover {
+    background-color: #FF6B00;
+    color: #000;
+    text-decoration: none;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .players-filter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .players-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .player-card-content {
+        padding: 1.2rem;
+    }
+
+    .player-name {
+        font-size: 1.2rem;
+    }
+
+    .player-info {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .player-link {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .players-filter label {
+        font-size: 0.85rem;
+    }
+
+    .filter-select {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .player-name {
+        font-size: 1.1rem;
+    }
+
+    .player-info {
+        font-size: 0.85rem;
+    }
+
+    .player-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+/* === РАСПИСАНИЕ ИГР НБА === */
+
+.schedule-section {
+    padding: 40px 0;
+    background-color: #000;
+}
+
+.schedule-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #FF6B00;
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.schedule-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.15);
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #111;
+}
+
+.schedule-table th {
+    background-color: #FF6B00;
+    color: #000;
+    padding: 18px 20px;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.schedule-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #333;
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: rgba(255, 107, 0, 0.08);
+    transition: background-color 0.3s ease;
+}
+
+.game-date {
+    color: #aaa;
+    font-style: italic;
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+.team-name {
+    font-weight: 600;
+    color: #FF6B00;
+    display: inline;
+    font-size: 1.05rem;
+}
+
+.arena {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+@media screen and (max-width: 576px) {
+    .section-title {
+        font-size: 1.1rem;    
+        margin-bottom: 8px;     
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 4px 5px;
+        font-size: 1rem;       
+    }
+    
+    .game-date,
+    .team-name,
+    .arena {
+        font-size: 0.8rem;   
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .section-title {
+        font-size: 1.2rem;    
+        margin-bottom: 8px;      
+        text-align: left;
+    }
+    
+    .schedule-wrapper {
+        border-radius: 5px;   
+        box-shadow: 0 3px 5px rgba(255, 107, 0, 0.1); 
+    }
+    
+    .schedule-table {
+        min-width: 360px;      
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 6px 8px;     
+        font-size: 0.8rem;    
+    }
+    
+    .game-date {
+        font-size: 0.7rem;  
+        white-space: normal;
+    }
+    
+    .team-name {
+        display: block;
+        margin: 3px 0;        
+    }
+    
+    .arena {
+        font-size: 0.7rem;  
+        margin-top: 3px;
+    }
+}
+
+
+@media screen and (max-width: 300px) {
+    .schedule-section .container {
+        padding: 0 3px;       
+    }
+    
+    .schedule-table {
+        min-width: 320px;      
+    }
+    
+    .section-title {
+        font-size: 1.2rem;    
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 5px 6px;     
+    }
+}
+
+
